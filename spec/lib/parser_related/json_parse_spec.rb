@@ -1,5 +1,5 @@
 require 'spec_helper'
-require "#{Rails.root}/app/services/parser_related/json_parse.rb"
+require "#{Rails.root}/lib/parser_related/json_parse.rb"
 
 describe JsonParse do
   subject { JsonParse.new json }

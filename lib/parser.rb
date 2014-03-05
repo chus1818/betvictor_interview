@@ -1,4 +1,4 @@
-Dir[ "#{Rails.root}/app/services/parser_related/*.rb" ].each { |file| require file }
+Dir[ "#{Rails.root}/lib/parser_related/*.rb" ].each { |file| require file }
 
 class Parser
   def initialize format, options = {}
