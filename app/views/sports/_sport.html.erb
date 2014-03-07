@@ -1,0 +1,10 @@
+<ul>
+  <li class="attribute">
+    <span><%= t( 'models.sport.attributes.title' ) %>: </span>
+    <span><%= link_to sport.title, sport_path( sport.id ) %></span>
+  </li>
+  <li class="attribute">
+    <span><%= t( 'models.sport.attributes.is_virtual') %>: </span>
+    <span><%= sport.humanized_is_virtual %></span>
+  </li>
+</ul>

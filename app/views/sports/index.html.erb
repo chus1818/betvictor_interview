@@ -1,0 +1,9 @@
+<h2> <%= t( "models.sport.name" ).pluralize %> </h2>
+
+<ul id="sport_list" >
+  <% @sports.each do |sport| %>
+    <li class="sport" id="sport_#{sport.id}">
+      <%= render partial: 'sport', :locals => { :sport => sport } %>
+    </li>
+  <% end %>
+</ul>

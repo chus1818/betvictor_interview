@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Betvictor do 
-  subject { Betvictor.new }
   let( :parsed_source ) do
     {
       'version' => '1',

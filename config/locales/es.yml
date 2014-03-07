@@ -6,9 +6,6 @@ en:
         title: "Title"
         meetings: "Meetings"
         is_virtual: "Is virtual"
-  application:
-    links:
-      back_to_index: "Back to index"
   helpers:
-    yes: 'Yes'
-    no: 'No'
+    yes_helper: 'Yes'
+    no_helper: 'No'
