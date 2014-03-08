@@ -8,14 +8,14 @@ describe Betvictor do
     }
   end
 
-  let( :sport_1 ) { double }
-  let( :sport_2 ) { double }
+  let( :sport_1 ) { { "pos" => 2 } }
+  let( :sport_2 ) { { "pos" => 1 } }
   let( :sports  ) { [ sport_1, sport_2 ] }
 
   describe "#sports" do
     it "returns the sports array from the Betvictor endpoint" do
       subject.should_receive( :source ).and_return parsed_source
-      subject.sports.should eq sports
+      subject.sports.should eq sports.reverse
     end
   end
 end

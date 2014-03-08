@@ -10,16 +10,22 @@ class Betvictor
   end
 
   def sports args = nil
-    source[ "sports" ]
+    source[ "sports" ].sort_by &pos
   end
 
   def events args
     sport_id = args[0]
-    find( :sports, sport_id.to_i )[ "events" ]
+    find( :sports, sport_id.to_i )[ "events" ].sort_by &pos
   end
 
   def outcomes args
     event_id = args[1]
-    find( :events, event_id.to_i, args )[ "outcomes" ]
+    find( :events, event_id.to_i, args )[ "outcomes" ].sort_by &pos
+  end
+
+private
+
+  def pos
+    proc { |elm| elm[ "pos" ] }
   end
 end
