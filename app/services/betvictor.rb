@@ -10,6 +10,14 @@ class Betvictor
   end
 
   def sports
-    source["sports"]
+    source[ "sports" ]
+  end
+
+  def events sport_id
+    sports[ sport_id.to_i ][ "events" ]
+  end
+
+  def outcomes sport_id, event_id
+    events( sport_id )[ event_id.to_i ]
   end
 end

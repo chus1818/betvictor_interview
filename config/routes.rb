@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  root 'sports#index'
 
-  resources :sports, :only => [ :index, :show ] do
-    resources :events, :only => [ :index, :show ] do
-      resources :outcomes, :only => [ :index, :show ]
+  root 'welcome#index'
+
+  scope "/:locale" do    
+    resources :sports, :only => [ :index, :show ] do
+      resources :events, :only => [ :index, :show ] do
+        resources :outcomes, :only => [ :index, :show ]
+      end
     end
   end
 
