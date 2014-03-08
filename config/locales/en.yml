@@ -28,5 +28,5 @@ en:
       go_to_events: "Go to events for this sport"
       go_to_outcomes: "Go to outcomes for this event"
   helpers:
-    yes: 'Yes'
-    no: 'No'
+    yes_helper: 'Yes'
+    no_helper: 'No'

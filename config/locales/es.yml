@@ -1,11 +1,32 @@
-en:
+es:
   models:
     sport:
-      name: "Sport"
+      name: "Deporte"
       attributes:
-        title: "Title"
-        meetings: "Meetings"
-        is_virtual: "Is virtual"
+        title: "Título"
+        meetings: "Reuniones"
+        is_virtual: "Es virtual"
+    event:
+      name: "Evento"
+      attributes:
+        is_virtual: "Es virtual"
+        title: "Título"
+        start_time: "Inicio"
+        meeting: "Reunión"
+    outcome:
+      name: "Resultado"
+      attributes:
+        description: "Descripción"
+        market: "Mercado"
+        price_decimal: "Precio decimal"
+        price: "Precio"
+  application:
+    links:
+      back_to_index: "Volver al índice"
+      back_to_events: "Volver a eventos"
+      back_to_outcomes: "Volver a resultados"
+      go_to_events: "Ir a los eventos para este deporte"
+      go_to_outcomes: "Ir a los resultados para este evento"
   helpers:
-    yes_helper: 'Yes'
+    yes_helper: 'Sí'
     no_helper: 'No'
