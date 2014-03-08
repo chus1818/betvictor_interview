@@ -23,7 +23,10 @@ en:
   application:
     links:
       back_to_index: "Back to index"
+      back_to_sports: "Back to sports"
+      back_to_sport: "Back to the sport"
       back_to_events: "Back to events"
+      back_to_event: "Back to the event"
       back_to_outcomes: "Back to outcomes"
       go_to_events: "Go to events for this sport"
       go_to_outcomes: "Go to outcomes for this event"

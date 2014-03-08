@@ -8,4 +8,4 @@
   <% end %>
 </ul>
 
-<%= link_to t( "application.links.back_to_events" ), sport_events_path( params[ :sport_id ] ) %> 
+<%= link_to t( "application.links.back_to_event" ), sport_event_path( params[ :sport_id ], params[ :event_id ] ) %> 

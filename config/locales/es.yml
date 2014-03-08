@@ -23,7 +23,10 @@ es:
   application:
     links:
       back_to_index: "Volver al índice"
+      back_to_sports: "Volver a deportes"
+      back_to_sport: "Volver al deporte"
       back_to_events: "Volver a eventos"
+      back_to_event: "Volver al evento"
       back_to_outcomes: "Volver a resultados"
       go_to_events: "Ir a los eventos para este deporte"
       go_to_outcomes: "Ir a los resultados para este evento"
