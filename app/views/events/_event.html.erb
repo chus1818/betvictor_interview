@@ -1,0 +1,19 @@
+<ul>
+  <li class="attribute">
+    <span><%= t( 'models.event.attributes.title' ) %>: </span>
+    <span><%= link_to event.title, sport_event_path( params[ :sport_id ], event.id ) %></span>
+  </li>
+  <li class="attribute">
+    <span><%= t( 'models.event.attributes.start_time' ) %>: </span>
+    <span><%= event.start_time %></span>
+  </li>
+  <li class="attribute">
+    <span><%= t( 'models.event.attributes.meeting' ) %>: </span>
+    <span><%= event.meeting %></span>
+  </li>
+  <li class="attribute">
+    <span><%= t( 'models.event.attributes.is_virtual') %>: </span>
+    <span><%= humanize_boolean event.is_virtual %></span>
+  </li>
+  <li> <%= link_to t( 'application.links.go_to_outcomes' ), sport_event_outcomes_path( params[ :sport_id ], event.id ) %> </li>
+</ul>

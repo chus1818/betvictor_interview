@@ -1,16 +1,18 @@
 require 'spec_helper'
 
+Foo = Class.new BetvictorRecord
+
 describe BetvictorRecord do
-  subject { Sport = Class.new BetvictorRecord }
+  subject { Foo }
   let( :class_instance ) { subject.find 1 }
 
-  let( :sports_array ) { [ sport_1, sport_2 ] }
-  let( :sport_1 ) { { "id" => 1, "title" => "a title"   } }
-  let( :sport_2 ) { { "id" => 2, "title" => "a title 2" } }
+  let( :foos_array ) { [ foo_1, foo_2 ] }
+  let( :foo_1 ) { { "id" => 1, "title" => "a title"   } }
+  let( :foo_2 ) { { "id" => 2, "title" => "a title 2" } }
 
   describe "#self.all" do
     before do 
-      Betvictor.any_instance.should_receive( :sports ).and_return sports_array
+      Betvictor.any_instance.should_receive( :foos ).and_return foos_array
     end
 
     let( :all_records ) { subject.all }
@@ -18,24 +20,24 @@ describe BetvictorRecord do
     it "returns an array of instances for all the records in the source" do
       all_records.class.should eq Array
       all_records.size.should eq 2
-      all_records.first.record.should eq sport_1
+      all_records.first.record.should eq foo_1
     end
   end
 
   describe "#self.find" do
     before do 
-      Betvictor.any_instance.should_receive( :find ).with( :sport, 1 ).and_return sport_1
+      Betvictor.any_instance.should_receive( :find ).with( :foo, 1, [] ).and_return foo_1
     end
 
     it "returns a new BetvictorRecord instance with a record extracted from source matching the given id" do
-      class_instance.class.should eq Sport
-      class_instance.record.should eq sport_1
+      class_instance.class.should eq Foo
+      class_instance.record.should eq foo_1
     end
   end
 
   describe "#self.attr_readable" do
     before do 
-      Betvictor.any_instance.should_receive( :find ).with( :sport, 1 ).and_return sport_1
+      Betvictor.any_instance.should_receive( :find ).with( :foo, 1, [] ).and_return foo_1
       subject.attr_readable :id, :title
     end
 

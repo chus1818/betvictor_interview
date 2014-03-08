@@ -1,18 +1,18 @@
 class BetvictorRecord
   attr_reader :record
 
-  def self.all
-    retrieve_all_from_source.map { |record| new record }
-  end
-
-  def self.find id
-    new retrieve_from_source id.to_i
-  end
-
   def self.attr_readable *args
     args.each do |arg|
       define_method( arg ) { record[ arg.to_s ] }
     end
+  end
+
+  def self.all *args
+    retrieve_all_from_source( args ).map { |record| new record }
+  end
+
+  def self.find id, *args
+    new retrieve_from_source id.to_i, args
   end
 
   def self.first
@@ -29,11 +29,11 @@ class BetvictorRecord
 
 protected
 
-  def self.retrieve_from_source id
-    Betvictor.new.find name_symbol, id
+  def self.retrieve_from_source id, args
+    Betvictor.new.find name_symbol, id, args
   end
 
-  def self.retrieve_all_from_source
-    Betvictor.new.send pluralized_name_symbol
+  def self.retrieve_all_from_source args
+    Betvictor.new.send pluralized_name_symbol, args
   end
 end

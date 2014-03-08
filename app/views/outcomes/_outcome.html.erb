@@ -1,0 +1,18 @@
+<ul>
+  <li class="attribute">
+    <span><%= t( 'models.outcome.attributes.description' ) %>: </span>
+    <span><%= link_to outcome.description, sport_event_outcome_path( params[ :sport_id ], params[ :event_id ], outcome.id ) %></span>
+  </li>
+  <li class="attribute">
+    <span><%= t( 'models.outcome.attributes.market') %>: </span>
+    <span><%= outcome.market %></span>
+  </li>
+  <li class="attribute">
+    <span><%= t( 'models.outcome.attributes.price_decimal') %>: </span>
+    <span><%= outcome.price_decimal %></span>
+  </li>
+  <li class="attribute">
+    <span><%= t( 'models.outcome.attributes.price') %>: </span>
+    <span><%= outcome.price %></span>
+  </li>
+</ul>

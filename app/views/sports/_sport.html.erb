@@ -5,6 +5,7 @@
   </li>
   <li class="attribute">
     <span><%= t( 'models.sport.attributes.is_virtual') %>: </span>
-    <span><%= sport.humanized_is_virtual %></span>
+    <span><%= humanize_boolean sport.is_virtual %></span>
   </li>
+  <li> <%= link_to t( 'application.links.go_to_events' ), sport_events_path( sport.id ) %> </li>
 </ul>

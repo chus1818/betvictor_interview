@@ -18,7 +18,7 @@ describe Sport do
     let( :id ) { 1 }
 
     it "returns an sport from Betvictor matching the given id" do
-      Betvictor.any_instance.should_receive( :find ).with :sport, id
+      Betvictor.any_instance.should_receive( :find ).with :sport, id, []
       subject.find id
     end
   end

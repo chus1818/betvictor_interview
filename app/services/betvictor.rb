@@ -5,19 +5,21 @@ class Betvictor
     @source = Parser.new( :json ).parse_from_url MAIN_SOURCE
   end
 
-  def find name, id
-    send( name.to_s.downcase.pluralize ).detect { |elm| elm[ "id" ] == id }
+  def find name, id, args = nil
+    send( name.to_s.downcase.pluralize, args ).detect { |elm| elm[ "id" ] == id }
   end
 
-  def sports
+  def sports args = nil
     source[ "sports" ]
   end
 
-  def events sport_id
-    sports[ sport_id.to_i ][ "events" ]
+  def events args
+    sport_id = args[0]
+    find( :sports, sport_id.to_i )[ "events" ]
   end
 
-  def outcomes sport_id, event_id
-    events( sport_id )[ event_id.to_i ]
+  def outcomes args
+    event_id = args[1]
+    find( :events, event_id.to_i, args )[ "outcomes" ]
   end
 end

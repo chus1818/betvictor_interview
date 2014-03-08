@@ -1,0 +1,11 @@
+<h2> <%= t( "models.outcome.name" ).pluralize %> </h2>
+
+<ul id="outcome_list" >
+  <% @outcomes.each do |outcome| %>
+    <li class="outcome" id="outcome_#{outcome.id}">
+      <%= render partial: 'outcome', :locals => { :outcome => outcome } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to t( "application.links.back_to_events" ), sport_events_path( params[ :sport_id ] ) %> 

@@ -1,0 +1,3 @@
+<%= render partial: 'outcome', :locals => { :outcome => @outcome } %>
+
+<%= link_to t( 'application.links.back_to_outcomes' ), sport_event_outcomes_path( params[ :sport_id ], params[ :event_id ] ) %>
